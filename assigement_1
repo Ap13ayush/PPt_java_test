@@ -1,0 +1,82 @@
+Q1.What is the difference between Compiler and Interpreter
+
+Answer:
+A compiler scans the entire program in one go and translates it as a whole into machine code.
+A compiler generates an object code which further requires linking, hence requires more memory.
+Programming languages like C, C++, and Java use compilers.
+An interpreter translates the program one statement at a time.
+An interpreter does not generate any object code, hence it is memory efficient.
+Programming languages like JavaScript, Python, and Ruby use interpreters.
+======================================================================================================================
+2.What is the difference between JDK, JRE, and JVM?
+Answer
+* JVM (Java Virtual Machine) is an abstract machine that provides a runtime environment in which Java bytecode can be executed. It is called a virtual machine because it doesn’t physically exist. It is a specification that provides runtime environment in which java bytecode can be executed.
+
+* JRE (Java Runtime Environment) is a set of software tools used for developing Java applications. It is used to provide the runtime environment and is the implementation of JVM.
+
+* JDK (Java Development Kit) is a software development environment used to develop Java applications and applets. It contains JRE + development tools.
+===================================================================================================================================================================
+Q3.How many types of memory areas are allocated by JVM?
+Answer
+The (Java Virtual Machine) allocates 5 different types of memory areas:
+Class (Method) Area: This memory block stores the class code, variable code (static variable, runtime constant), method code, and the constructor of a Java program.
+Heap: The Heap area is the memory block where objects are created or objects are stored. Heap memory allocates memory for class interfaces and arrays
+Stack: Each thread has a private JVM stack, created at the same time as the thread. It is used to store data and partial results which will be needed while returning value for method and performing dynamic linking
+Program Counter Register: Each JVM thread that carries out the task of a specific method has a program counter register associated with it
+Native Method Stack: This memory is allocated for each thread when it’s created and can be of a fixed or dynamic nature
+=========================================================================================================================
+Q4. What is JIT compiler?
+
+JIT stands for Just-In-Time Compiler. It is a part of the JVM (Java Virtual Machine) that optimizes the performance of Java-based applications during runtime
+
+The JIT compiler improves the performance of Java programs by compiling bytecode into native machine code at runtime  The JIT compiler is enabled throughout, while it gets activated when a method is invoked. For a compiled method, the JVM directly calls the compiled code, instead of interpreting it
+=========================================================================================================================================================================================================================================================================================================================
+Q5. What are the various access specifiers in Java?
+
+In Java, there are four types of access specifiers that specify the accessibility or scope of a field, method, constructor, or class:
+
+Private: The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+Default: If you don’t use any modifier, it is treated as default by default. The default modifier is accessible only within the package. It cannot be accessed from outside the package
+Protected: The access level of a protected modifier is within the package and outside the package through child class. If you do not make the child class, it cannot be accessed from outside the package.
+Public: The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package
+===================================================================================================================================================================================================
+Q6. What is a compiler in Java?
+
+A compiler in Java is a computer program that is used for compiling Java programs. It is platform-independent. It converts (translates) source code (.java file) into bytecode (.class file). In other words, the compiler (javac.exe) generates bytecode during the compilation process
+========================================================================================================================================
+Q7. Explain the types of variables in Java?
+
+In Java, there are three types of variables:
+
+Local Variable: A variable declared inside the body of a method is called a local variable. You can use this variable only within that method and the other methods in the class aren’t even aware that the variable exists.
+Instance Variable: A variable declared inside the class but outside the body of a method is called an instance variable. It is not declared as static. Its value is instance-specific and is not shared among instances
+Static Variable: A variable that is declared as static is called a static variable. It cannot be local. You can create a single copy of the static variable and share it among all the instances of the class. Memory allocation for static variables happens only once when the class is loaded in memory
+=================================================================================================================================================================
+Q8. What are the Datatypes in Java
+
+there are two types of data types:
+
+Primitive data types: The primitive data types include boolean, char, byte, short, int, long, float and double.
+Non-primitive data types: The non-primitive data types include Classes, Interfaces, and Arrays
+===========================================================================================================
+Q9. What are the identifiers in java?
+
+In Java, identifiers are symbolic names used for identification. They can be a class name, variable name, method name, package name, constant name, and more1. However, there are some reserved words that cannot be used as an identifier1.
+
+There are some rules and conventions for declaring identifiers in Java:
+
+A valid identifier must have characters [A-Z] or [a-z] or numbers [0-9], and underscore (_) or a dollar sign ($)
+There should not be any space in an identifier
+An identifier should not contain a number at the starting.
+An identifier should be of length 4-15 letters only. However, there is no limit on its length. But, it is good to follow the standard conventions.
+We can’t use the Java reserved keywords as an identifier such as int, float, double, char, etc.
+==========================================================================================================================================================
+Q10. Explain the architecture of JVM
+
+JVM (Java Virtual Machine) is an abstract machine that provides a runtime environment in which Java bytecode can be executed. It is a specification that provides runtime environment in which java bytecode can be executed
+
+The internal architecture of JVM contains several components, including classloader, memory area, execution engine, etc
+
+Classloader: Classloader is a subsystem of JVM which is used to load class files. Whenever we run the java program, it is loaded first by the classloader
+Memory Area: Memory Area stores per-class structures such as the runtime constant pool, field and method data, the code for methods
+Execution Engine: The execution engine reads the bytecode and executes it
