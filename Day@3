@@ -1,0 +1,265 @@
+Q1. Write a simple Banking System program by using OOPs concept where you can get account Holder name balance etc?**
+
+Here's an example program that demonstrates a simple banking system using OOP concepts:
+
+```java
+class BankAccount {
+    private String accountHolderName;
+    private double balance;
+
+    public BankAccount(String accountHolderName, double balance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (amount > balance) {
+            System.out.println("Insufficient funds!");
+        } else {
+            balance -= amount;
+        }
+    }
+}
+
+public class BankSystem {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("John Doe", 1000);
+        System.out.println("Account Holder Name: " + account.getAccountHolderName());
+        System.out.println("Initial Balance: " + account.getBalance());
+
+        account.deposit(500);
+        System.out.println("Balance after deposit: " + account.getBalance());
+
+        account.withdraw(200);
+        System.out.println("Balance after withdrawal: " + account.getBalance());
+    }
+}
+
+
+**Q2. Write a Program where you inherit method from parent class and show method Overridden Concept?**
+
+Here's an example program that demonstrates method overriding by inheriting a method from a parent class:
+
+```java
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks");
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal();
+        myAnimal.makeSound();
+
+        Dog myDog = new Dog();
+        myDog.makeSound();
+    }
+}
+
+
+**Q3. Write a program to show run time polymorphism in java?**
+
+Here's an example program that demonstrates runtime polymorphism in Java:
+
+```java
+class Shape {
+    public void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing square");
+    }
+}
+
+public class RuntimePolymorphism {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        shape1.draw();
+
+        Shape shape2 = new Square();
+        shape2.draw();
+    }
+}
+
+**Q4. Write a program to show Compile time polymorphism in java?**
+
+Here's an example program that demonstrates compile-time polymorphism in Java:
+
+```java
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class CompileTimePolymorphism {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+        System.out.println(calculator.add(1, 2));
+        System.out.println(calculator.add(1, 2, 3));
+    }
+}
+
+
+
+**Q5. Achieve loose coupling in java by using OOPs concept?**
+
+Loose coupling can be achieved in Java by using interfaces and dependency injection.
+
+Here's an example program that demonstrates loose coupling using interfaces:
+
+```java
+interface MessageService {
+    void sendMessage(String message);
+}
+
+class EmailService implements MessageService {
+    @Override
+    public void sendMessage(String message) {
+        System.out.println("Sending email: " + message);
+    }
+}
+
+class SMSService implements MessageService {
+    @Override
+    public void sendMessage(String message) {
+        System.out.println("Sending SMS: " + message);
+    }
+}
+
+class NotificationService {
+    private MessageService messageService;
+
+    public NotificationService(MessageService messageService) {
+        this.messageService = messageService;
+    }
+
+    public void notify(String message) {
+        messageService.sendMessage(message);
+    }
+}
+
+public class LooseCoupling {
+    public static void main(String[] args) {
+        NotificationService emailNotification = new NotificationService(new EmailService());
+        emailNotification.notify("Hello World!");
+
+        NotificationService smsNotification = new NotificationService(new SMSService());
+        smsNotification.notify("Hello World!");
+    }
+}
+
+
+**Q6. What is the benefit of encapsulation in java?**
+
+Encapsulation is the technique of making the fields in a class private and providing access to the fields via public methods. The benefits of encapsulation in Java are:
+
+- It provides control over the data by providing getter and setter methods.
+- It improves maintainability and flexibility by allowing changes to be made to the implementation without affecting other parts of the code.
+- It increases the reusability of the code by allowing the same class to be used in different programs.
+
+**Q7. Is java a 100% Object oriented Programming language? If no why?**
+
+No, Java is not considered a 100% object-oriented programming language because it has primitive data types that are not objects.
+
+**Q8. What are the advantages of abstraction in java?**
+
+Abstraction is the process of hiding the implementation details and showing only the necessary information to the user. The advantages of abstraction in Java are:
+
+- It reduces the complexity of the code by hiding the implementation details.
+- It improves maintainability and flexibility by allowing changes to be made to the implementation without affecting other parts of the code.
+- It increases the reusability of the code by allowing the same interface to be used in different programs.
+
+**Q9. What is an abstraction explained with an Example?**
+
+Abstraction is the process of hiding the implementation details and showing only the necessary information to the user. In Java, abstraction can be achieved using abstract classes and interfaces.
+
+Here's an example program that demonstrates abstraction using an abstract class:
+
+```java
+abstract class Shape {
+    public abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing circle");
+    }
+}
+
+class Square extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing square");
+    }
+}
+
+public class Abstraction {
+    public static void main(String[] args) {
+        Shape shape1 = new Circle();
+        shape1.draw();
+
+        Shape shape2 = new Square();
+        shape2.draw();
+    }
+}
+
+
+**Q10. What is the final class in Java?**
+
+In Java, a final class is a class that cannot be subclassed (extended). This means that no other class can inherit from a final class. To create a final class, you use the `final` keyword before the `class` keyword.
+
+Here's an example that demonstrates a final class:
+
+```java
+final class FinalClass {
+    public void printMessage() {
+        System.out.println("Hello from FinalClass");
+    }
+}
+
+// This will cause a compile-time error because FinalClass cannot be extended
+//class SubClass extends FinalClass {}
+
+public class FinalClassDemo {
+    public static void main(String[] args) {
+        FinalClass finalClass = new FinalClass();
+        finalClass.printMessage();
+    }
+}
